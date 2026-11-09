@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuVault - Document Organizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div>
+        <h1>📁 DocuVault</h1>
+        <p>Your personal digital document organizer</p>
+    </div>
+    <span class="secure">🔒 Private Storage</span>
+</header>
+
+<main class="container">
+
+    <section class="welcome">
+        <h2>Welcome to DocuVault!</h2>
+        <p>Upload, organize and manage all your important documents in one place.</p>
+    </section>
+
+    <section class="stats">
+        <div class="stat-card">
+            <span>Total Documents</span>
+            <h2 id="totalDocs">0</h2>
+        </div>
+        <div class="stat-card">
+            <span>PDF Documents</span>
+            <h2 id="pdfDocs">0</h2>
+        </div>
+        <div class="stat-card">
+            <span>Images</span>
+            <h2 id="imageDocs">0</h2>
+        </div>
+    </section>
+
+    <section class="upload-section">
+        <h2>Upload Document</h2>
+
+        <form id="uploadForm">
+            <label for="fileInput" class="file-label">
+                📤 Choose a document
+            </label>
+
+            <input type="file" id="fileInput"
+                accept=".pdf,.png,.jpg,.jpeg,.webp,.txt,.doc,.docx"
+                required>
+
+            <input type="text" id="docName"
+                placeholder="Document name (optional)">
+
+            <select id="category">
+                <option value="Personal">Personal</option>
+                <option value="Education">Education</option>
+                <option value="Certificates">Certificates</option>
+                <option value="Finance">Finance</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <button type="submit" id="uploadBtn">
+                Upload Document
+            </button>
+        </form>
+
+        <p id="message"></p>
+        <small>Supported formats: PDF, JPG, PNG, WEBP, TXT, DOC and DOCX.</small>
+    </section>
+
+    <section class="documents-section">
+        <div class="section-heading">
+            <h2>My Documents</h2>
+            <span id="documentCount">0 documents</span>
+        </div>
+
+        <div class="filters">
+            <input type="search" id="searchInput"
+                placeholder="🔍 Search documents...">
+
+            <select id="filterCategory">
+                <option value="All">All Categories</option>
+                <option value="Personal">Personal</option>
+                <option value="Education">Education</option>
+                <option value="Certificates">Certificates</option>
+                <option value="Finance">Finance</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <div id="documentList" class="document-grid"></div>
+    </section>
+
+</main>
+
+<div id="previewModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 id="previewTitle">Document Preview</h3>
+            <button id="closePreview" class="close-btn">✕</button>
+        </div>
+        <iframe id="previewFrame" title="Document preview"></iframe>
+    </div>
+</div>
+
+<footer>
+    <p>DocuVault © 2026 | Organize. Store. Access.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

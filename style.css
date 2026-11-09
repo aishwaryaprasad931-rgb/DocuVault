@@ -1,0 +1,324 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6fb;
+    color: #252b42;
+}
+
+.header {
+    background: #252b55;
+    color: white;
+    padding: 25px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    margin-bottom: 7px;
+}
+
+.header p {
+    color: #d4d8ef;
+}
+
+.secure {
+    background: #394477;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.welcome {
+    margin-bottom: 25px;
+}
+
+.welcome h2 {
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    color: #777;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #0000000b;
+}
+
+.stat-card span {
+    color: #777;
+    font-size: 14px;
+}
+
+.stat-card h2 {
+    color: #5264d8;
+    font-size: 30px;
+    margin-top: 12px;
+}
+
+.upload-section,
+.documents-section {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 12px #0000000b;
+}
+
+.upload-section h2,
+.documents-section h2 {
+    margin-bottom: 20px;
+}
+
+#uploadForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    font-size: 14px;
+}
+
+.file-label {
+    background: #edf0ff;
+    padding: 12px;
+    border-radius: 7px;
+    text-align: center;
+    cursor: pointer;
+    color: #394bb7;
+    font-weight: bold;
+}
+
+#fileInput {
+    padding: 9px;
+}
+
+button {
+    background: #5264d8;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #394bb7;
+}
+
+.upload-section small {
+    display: block;
+    margin-top: 12px;
+    color: #888;
+}
+
+#message {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: #d22;
+}
+
+.section-heading,
+.filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.section-heading span {
+    color: #888;
+    font-size: 13px;
+}
+
+.filters {
+    margin-bottom: 20px;
+}
+
+.filters input {
+    flex: 2;
+}
+
+.filters select {
+    flex: 1;
+}
+
+.document-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.doc-card {
+    border: 1px solid #e5e7ef;
+    border-radius: 10px;
+    padding: 17px;
+    min-width: 0;
+}
+
+.doc-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.doc-icon {
+    font-size: 30px;
+}
+
+.doc-info {
+    min-width: 0;
+}
+
+.doc-info h3 {
+    font-size: 16px;
+    overflow-wrap: anywhere;
+}
+
+.doc-info p {
+    color: #888;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.category-tag {
+    display: inline-block;
+    background: #edf0ff;
+    color: #394bb7;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.doc-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.doc-actions button {
+    padding: 9px;
+    font-size: 12px;
+}
+
+.delete-btn {
+    background: #dc4545;
+}
+
+.delete-btn:hover {
+    background: #b92c2c;
+}
+
+.empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #888;
+    padding: 35px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #0009;
+    z-index: 10;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    width: 90%;
+    max-width: 850px;
+    height: 85vh;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    gap: 10px;
+}
+
+.close-btn {
+    width: 40px;
+    flex-shrink: 0;
+}
+
+#previewFrame {
+    width: 100%;
+    flex: 1;
+    border: 1px solid #ddd;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+}
+
+@media (max-width: 650px) {
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    #uploadForm,
+    .document-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filters {
+        flex-direction: column;
+    }
+
+    .modal-content {
+        width: 100%;
+        height: 90vh;
+    }
+}
